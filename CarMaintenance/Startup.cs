@@ -22,7 +22,13 @@ namespace CarMaintenance
         {
             var migrationAssembly = typeof(Startup).Assembly.GetName().Name;
 
-            services.AddControllers();
+            services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                {
+                    options.SerializerSettings.DateFormatString = "yyyy-MM-dd hh:mm:ss";
+                });
+
+
             //services.AddAuthentication("Bearer")
             //    .AddJwtBearer("Bearer", options =>
             //    {

@@ -69,7 +69,7 @@ namespace CarMaintenance.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<OilChange>> PostOilChange(OilChange oilChange)
+        public async Task<ActionResult<OilChange>> PostOilChange([FromBody] OilChange oilChange)
         {
             _ = await _context.Cars.FindAsync(oilChange.Vin) ??
                 throw new HttpStatusCodeException(StatusCodes.Status400BadRequest, $"Car with Vin '{oilChange.Vin}' does not exists!");
