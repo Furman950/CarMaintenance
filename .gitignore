@@ -341,3 +341,4 @@ healthchecksdb
 *.sql
 appsettings.Development.json
 appsettings.json
+docker-compose.yml
